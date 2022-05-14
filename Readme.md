@@ -1,7 +1,7 @@
 # Storefront Project
 
 Storefront project is backend project created with nodejs , it's an online store that provide product which make user can add more than product to his orders.
-Project provide RESTful API to fetch data from database . The used technologies typescript , PostgresSQL database and jasmine for umit testing.
+Project provide RESTful API to fetch data from database . The used technologies typescript , PostgresSQL database and jasmine for unit testing.
 
 ## Installation
 
@@ -12,6 +12,8 @@ npm install
 ```
 
 ## Build and Running server
+
+### run on host : 0.0.0.0:3000
 
 To build app
 
@@ -25,18 +27,33 @@ To run server
 npm run watch
 ```
 
-run on host : 0.0.0.0:3000
-
 ## Database and migrations
 
-Database run on port 5432.\
-To create Tables and relations
+Using postgerSQL database running on default user on
+
+#### port : 5432
+
+To creat user run this query
+
+```bash
+CREATE USER backend_storefront WITH PASSWORD '0000';
+```
+
+Then creating storefront database and storefront_test database for testing by running the below queries.
+
+```bash
+CREATE DATABASE storefront ;
+CREATE DATABASE storefront_test ;
+```
+
+To create Tables and relations.\
+run db-migrate up command to create tables
 
 ```bash
 db-migrate up
 ```
 
-To drop Tables and relations
+run db-migrate down to drop Tables and relations
 
 ```bash
 db-migrate down
